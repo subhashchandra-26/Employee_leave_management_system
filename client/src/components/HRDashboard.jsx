@@ -125,9 +125,9 @@ const HRDashboard = () => {
                         <tbody>
                             {requests.map(req => (
                                 <tr key={req._id}>
-                                    <td>{req.userId.username}</td>
-                                    <td>{req.userId.employeeId}</td>
-                                    <td>{req.userId.department}</td>
+                                    <td>{req.userId?.username || 'Unknown'}</td>
+                                    <td>{req.userId?.employeeId || 'N/A'}</td>
+                                    <td>{req.userId?.department || 'N/A'}</td>
                                     <td>{new Date(req.startDate).toLocaleDateString()}</td>
                                     <td>{new Date(req.endDate).toLocaleDateString()}</td>
                                     <td>{req.leaveType}</td>

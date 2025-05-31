@@ -11,8 +11,8 @@ const Home = () => {
                 Apply for leave, track requests, and manage approvals easily with our intuitive system.
             </p>
             <div className="d-flex justify-content-center gap-3">
-                <Link to="/login" className="btn btn-outline-light btn-lg">Login</Link>
-                <Link to="/register" className="btn btn-outline-light btn-lg">Register</Link>
+                <Link to="/login" className="btn btn-outline-dark btn-lg">Login</Link>
+                <Link to="/register" className="btn btn-outline-dark btn-lg">Register</Link>
             </div>
         </div>
     );

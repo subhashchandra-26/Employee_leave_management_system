@@ -15,7 +15,12 @@ const Login = ({ setRole }) => {
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('role', res.data.role);
             setRole(res.data.role);
-            navigate(res.data.role === 'employee' ? '/employee' : '/hr');
+            navigate(
+                res.data.role === 'employee' ? '/employee' :
+                res.data.role === 'hr' ? '/hr' :
+                res.data.role === 'admin' ? '/admin' : '/'
+            );
+
         } catch (err) {
             setError(err.response?.data.message || 'Login failed');
         }

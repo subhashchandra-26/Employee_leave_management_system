@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import EmployeeDashboard from './components/EmployeeDashboard';
 import HRDashboard from './components/HRDashboard';
+import AdminDashboard from './components/AdminDashboard';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import './App.css';
@@ -24,11 +25,12 @@ function App() {
                 <Navbar setRole={setRole} />
                 <div className="container mt-4">
                     <Routes>
+                        <Route path="/" element={<Home />} />
                         <Route path="/login" element={<Login setRole={setRole} />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/employee" element={role === 'employee' ? <EmployeeDashboard /> : <Navigate to="/login" />} />
                         <Route path="/hr" element={role === 'hr' ? <HRDashboard /> : <Navigate to="/login" />} />
-                        <Route path="/" element={<Home />} />
+                        <Route path="/admin" element={role === 'admin' ? <AdminDashboard /> : <Navigate to="/login" />} />
                     </Routes>
                 </div>
             </div>

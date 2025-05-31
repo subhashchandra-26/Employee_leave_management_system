@@ -9,7 +9,7 @@ const Navbar = ({ setRole }) => {
         localStorage.removeItem('token');
         localStorage.removeItem('role');
         setRole(null);
-        navigate('/login');
+        navigate('/');
     };
 
     return (
@@ -23,12 +23,18 @@ const Navbar = ({ setRole }) => {
                         <button className="nav-link btn btn-outline-danger btn-lg" onClick={handleLogout}>Logout</button>
                     ): (
                         <>
+                            {location.pathname === '/register' ? (
                             <Link className="nav-link btn btn-outline-success btn-lg" to="/login">
                                 Login
-                            </Link>
-                            <Link className="nav-link btn btn-outline-success btn-lg" to="/register">
-                                Register
-                            </Link>
+                            </Link>):(   
+                                <></>
+                            )}
+                            {location.pathname === '/login' ? (
+                                <Link className="nav-link btn btn-outline-success btn-lg" to="/register">
+                                    Register
+                                </Link>):(
+                                    <></>
+                            )}
                         </>
                     )}
                 </div>
